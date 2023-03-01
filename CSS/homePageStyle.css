@@ -8,7 +8,6 @@ body{
     background-image: url("../images/Cruelty-Squad.png");
 }
 h1{
-    display: inline;
     margin: auto;
     text-align: center;
     width: 50%;
@@ -17,7 +16,7 @@ h1{
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(239,74,232,1) 0%, rgba(21,246,94,1) 100%);
 }
 #login{
-    display: inline;
+
     margin-top: -2.25em;
     text-align: center;
     font-size: 1.5em;
@@ -25,8 +24,7 @@ h1{
     background-color: #15f65e;
 }
 #register{
-    display: inline;
-    margin: auto;
+
     margin-top: -2.27em;
     text-align: center;
     font-size: 1.5em;
@@ -37,8 +35,8 @@ h1{
     background: linear-gradient(0deg, rgba(239,74,232,1) 0%, rgba(21,246,94,1) 100%);
     height: 4em;
 }
-.main{
-    height: 700px;
+.entry{
+    height:12em;
     margin: auto;
     text-align: center;
     width: 70%;
@@ -51,10 +49,12 @@ h1{
     float: right;
     margin-right: 4%;
 }
+
 figcaption{
+    display: inline;
     margin-left: 4%;
     font-size: .7em;
-    clear: both;
+    clear: right;
     float: left;
 }
 
@@ -69,24 +69,30 @@ figcaption{
     margin-left: 4%;
     margin-top: .5em;
     float: left;
+    clear: both;
 
 }
 .imgPrev{
     margin-left: 4%;
     float: left;
+    clear: both;
     height: auto;
     width: 20%
 }
-.sidebar{
-    display: inline;
-    margin-top: 4.2em;
-    height: 700px;
+#sidebar{
+    clear: both;
+    margin-top: 4em;
     width: 7em;
     float: left;
     background-color: white;
-    clear: both
 }
 #pfp{
     height: auto;
+    clear: right;
     width: 4em;
+}
+
+article{
+    margin: 2em;
+    clear: right;
 }
