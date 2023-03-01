@@ -1,0 +1,9 @@
+.center{
+    display: inline;
+    margin: auto;
+    text-align: center;
+}
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url("../images/Cruelty-Squad.png");
+}
