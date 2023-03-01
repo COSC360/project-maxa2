@@ -33,7 +33,7 @@ h1{
     float: right;
     background-color: #15f65e;
 }
-.users{
+.top{
     background: linear-gradient(0deg, rgba(239,74,232,1) 0%, rgba(21,246,94,1) 100%);
     height: 4em;
 }
@@ -47,11 +47,46 @@ h1{
 
 
 }
+.user{
+    float: right;
+    margin-right: 4%;
+}
+figcaption{
+    margin-left: 4%;
+    font-size: .7em;
+    clear: both;
+    float: left;
+}
+
 
 .post{
-    font-size: 2em;
+    margin-left: 4%;
+    float: left;
+    font-size: 1.6em;
 }
 
 .preview{
+    margin-left: 4%;
+    margin-top: .5em;
+    float: left;
 
+}
+.imgPrev{
+    margin-left: 4%;
+    float: left;
+    height: auto;
+    width: 20%
+}
+.sidebar{
+    display: inline;
+    margin-top: 4.2em;
+    height: 700px;
+    width: 7em;
+    float: left;
+    background-color: white;
+    clear: both
+}
+#pfp{
+    height: auto;
+    width: 4em;
 }
