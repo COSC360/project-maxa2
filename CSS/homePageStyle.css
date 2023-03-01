@@ -1,0 +1,57 @@
+.center{
+    display: inline;
+    margin: auto;
+    text-align: center;
+}
+body{
+
+    background-image: url("../images/Cruelty-Squad.png");
+}
+h1{
+    display: inline;
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    font-size: 3em;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(239,74,232,1) 0%, rgba(21,246,94,1) 100%);
+}
+#login{
+    display: inline;
+    margin-top: -2.25em;
+    text-align: center;
+    font-size: 1.5em;
+    float: right;
+    background-color: #15f65e;
+}
+#register{
+    display: inline;
+    margin: auto;
+    margin-top: -2.27em;
+    text-align: center;
+    font-size: 1.5em;
+    float: right;
+    background-color: #15f65e;
+}
+.users{
+    background: linear-gradient(0deg, rgba(239,74,232,1) 0%, rgba(21,246,94,1) 100%);
+    height: 4em;
+}
+.main{
+    height: 700px;
+    margin: auto;
+    text-align: center;
+    width: 70%;
+    margin-top: 5%;
+    background: linear-gradient(0deg, rgba(239,74,232,1) 0%, rgba(21,246,94,1) 100%);
+
+
+}
+
+.post{
+    font-size: 2em;
+}
+
+.preview{
+
+}
