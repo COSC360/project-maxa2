@@ -6,7 +6,7 @@ window.onload = function(){
         var user = fields[1];
         var pass = fields[2];
 
-        if(email.value == null || email.value == "" || !email.value.contains("@")){
+        if(email.value == null || email.value == ""){
             e.preventDefault();
             alert("Enter a valid email");
         }
