@@ -3,7 +3,21 @@
     margin: auto;
     text-align: center;
 }
-body{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+html{
     background-image: url("../images/Cruelty-Squad.png");
+}
+body{
+    margin: auto;
+    margin-top: 3em;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: linear-gradient(0deg, rgba(239,74,232,1) 0%, rgba(21,246,94,1) 100%);
+    width: 66%;
+}
+#pfp{
+    width: 20%;
+    height: auto;
+}
+#avatar{
+    margin-left: 5.5em;
 }
