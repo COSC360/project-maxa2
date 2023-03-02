@@ -37,6 +37,7 @@ h1{
     text-align: center;
     width: 70%;
     margin-top: 5%;
+    margin-bottom: 5%;
     background: linear-gradient(0deg, rgba(239,74,232,1) 0%, rgba(21,246,94,1) 100%);
 }
 .user{
