@@ -1,4 +1,4 @@
-Samuel Peter, Mackenzie Atkins 10504520
+
 # COSC360 Project proposal
 
 ## Provide a description of the project you are going to undertake
