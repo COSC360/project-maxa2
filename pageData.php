@@ -6,11 +6,12 @@
     $pdo = new PDO($connString, $user);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $sql = "SELECT biggamer22 FROM username";
+    $sql = "SELECT `biggamer22` FROM `username` WHERE 1;";
     $result = $pdo->query($sql);
 
     $idNo = 0;
-    $username = $result->fetch();
+    $row = $result->fetch();
+    $username = $row[0];
     // while($row = $result->fetch()){
     //     $username = $row;
     //     $idNo++;

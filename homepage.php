@@ -32,7 +32,7 @@
                 include "project-maxa2/pageData.php";
 
                 echo '<p><a href="viewPost.html" class="post">TEST BLOG POST</a>   </p>
-                 <p class="user"><a href="#">'.$username[0]. '</a> <time datetime="2023-02-20 9:26"> on Feb 20 at 9:26 am</time></p>
+                 <p class="user"><a href="#">'.$username. '</a> <time datetime="2023-02-20 9:26"> on Feb 20 at 9:26 am</time></p>
                  <p class="preview">SAMPLE BLOG POST PREVIEW</p> <br><br><br>
                  <figure>
                     <img class="imgPrev" src="project-maxa2/images/20210305221416_1.jpg" alt="gameplay screenshot">
