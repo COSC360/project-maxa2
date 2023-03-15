@@ -6,7 +6,7 @@
     $pdo = new PDO($connString, $user);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $sql = "SELECT `biggamer22` FROM `username` WHERE 1;";
+    $sql = "SELECT * FROM `username` WHERE 1;";
     $result = $pdo->query($sql);
 
     $idNo = 0;
