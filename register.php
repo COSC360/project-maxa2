@@ -26,9 +26,9 @@
                     <input type="password" name="pass" placeholder="Password" class="required">
                 </p>
                 <p>
-                    <button id="reg" type="submit" name="register">Register</button>
+                    <button id="reg" type="submit" name="register" formaction="homepage.php">Register</button>
                 </p>
-                <p><button formaction="homePage.html">Home</button></p>
+                <p><button formaction="homePage.php">Home</button></p>
             </fieldset>
         </form>
 
