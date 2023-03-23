@@ -11,9 +11,9 @@
         
         <div class="top">
             <h1>WELCOME TO CRUELTY SQUAD</h1> 
-            <p><a href="project-maxa2/login.html" id="login">LOGIN</a> </p><br><br>
+            <p><a href="project-maxa2/login.php" id="login">LOGIN</a> </p><br><br>
 
-            <p><a href="project-maxa2/register.html" id="register">REGISTER</a></p>
+            <p><a href="project-maxa2/register.php" id="register">REGISTER</a></p>
         </div>
 
     <article id="sidebar">
