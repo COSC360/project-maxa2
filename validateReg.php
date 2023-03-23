@@ -2,42 +2,54 @@
 
     $connString = "mysql:host=localhost;dbname=mysql";
     $user = "root";
-    $pass = "testpassword";
+    
 
     $pdo = new PDO($connString, $user);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);;
 
-    $sql = "SELECT * FROM `user`;";
-    $result = $pdo->query($sql);
-
-    $row = $result->fetch();
+    
     
 
+    // if($_SERVER['REQUEST METHOD'] == 'POST'){
 
-        if(!in_array($_POST['email'], $row) && !in_array($_POST['user']), $row){
-            $email = $_POST['email'];
-            $username = $_POST['user'];
-            $password = $_POST['pass'];
-
-            $sql = "INSERT INTO `users`(`Username`, `Password`, `Email`) VALUES (?,?,?)";
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(1, $username, PDO::PARAM_STR);
-            $stmt->bindParam(2, $password, PDO::PARAM_STR);
-            $stmt->bindParam(3, $email, PDO::PARAM_STR);
+        $email = $_POST['email'];
+        $username = $_POST['user'];
+        $password = $_POST['pass'];
 
 
-            $stmt->execute();
-            alert("Successfully registered");
-        }else{
-            alert("Registration failed");
-        }
+        $sql = "SELECT * FROM users WHERE Username = '$username' ;";
+        //$result = $pdo->query($sql);
+        
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        
+
+            // while($row = $result->fetch()){
+        
+
+        // if(!in_array($_POST['email'], $result) && !in_array($_POST['user'], $result)){
+            if($stmt->rowCount()>0){
+
+                echo "Fail";
+            
+            }else{
+                
+    
+                $sql = "INSERT INTO `users`(`Username`, `Password`, `Email`) VALUES (?,?,?)";
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindParam(1, $username, PDO::PARAM_STR);
+                $stmt->bindParam(2, $password, PDO::PARAM_STR);
+                $stmt->bindParam(3, $email, PDO::PARAM_STR);
+    
+    
+                $stmt->execute();
+                echo "Success";
+            }
+        //}
 
 
 
-
-
-
-
+    // }
 
     $pdo = null;
 
