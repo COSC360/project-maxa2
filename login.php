@@ -22,9 +22,9 @@
                 </p>
                 <p>
                     <button id="login" type="submit" name="login">Log in</button>
-                    <button formaction="homePage.html">Forgot password</button>
+                    <button formaction="homePage.php">Forgot password</button>
                 </p>
-                <p><button formaction="homePage.html">Home</button></p>
+                <p><button formaction="homePage.php">Home</button></p>
             </fieldset>
         </form>
 
