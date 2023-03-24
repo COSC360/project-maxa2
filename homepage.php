@@ -18,15 +18,25 @@
 
     <article id="sidebar">
             <?php
-                $username = $_GET['data'];
-                echo "<p>" . $username . "</p>";
+
+                session_start();
+                if(empty($_SESSION["username"])){
+                    session_destroy();
+                }
+                           
+
+                if(session_status() == 1){
+                    echo "<p>No user</p>";
+                }else if (session_status()==2){
+                   echo "<p>" . $_SESSION["username"]. "</p>";
+                }
             
             ?>
             <img id="pfp" src="project-maxa2/images/676-6764065_default-profile-picture-transparent-hd-png-download.png">
             <p><a href="project-maxa2/profile.html">Profile</a></p><br>
             <p><a href="project-maxa2/makePost.html">Create Post</a></p><br>
             <p><a href="project-maxa2/inbox.html">Messages</a></p><br>
-            <p><a href="#">Log out</a></p>
+            <p><a href="logout.php">Log out</a></p>
 
     </article>
 

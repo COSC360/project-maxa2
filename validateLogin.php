@@ -1,5 +1,7 @@
 <?php
     
+    session_start();
+
     $connString = "mysql:host=localhost;dbname=mysql";
     $user = "root";
     
@@ -13,12 +15,13 @@
 
     $sql = "SELECT Username, Password FROM Users WHERE Username = '$username' AND Password = '$password'";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute();   
+    $stmt->execute();
+    
 
     if($stmt->rowCount()>0){
-        $data = $username;
-        $url = "homepage.php?data=" . urlencode($data);
-        header("Location: " .$url);
+
+        $_SESSION["username"] = $username;
+        header("Location: homepage.php");
         exit();
 
         
