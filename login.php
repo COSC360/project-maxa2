@@ -9,12 +9,12 @@
     </head>
 
     <body>
-        <form id="mainForm" method="post" action="http://www.randyconnolly.com/tests/process.php">
+        <form id="mainForm" method="post" action="validateLogin.php">
             <fieldset>
                 <legend>Login</legend>
                 <p>
-                    <label>Email:</label>
-                    <input class="required" type="text" name="email" placeholder="Email address">
+                    <label>Username:</label>
+                    <input class="required" type="text" name="user" placeholder="Username">
                 </p>
                 <p>
                     <label>Password</label>

@@ -17,7 +17,11 @@
         </div>
 
     <article id="sidebar">
-            <p>hugegamer312</p><br>
+            <?php
+                $username = $_GET['data'];
+                echo "<p>" . $username . "</p>";
+            
+            ?>
             <img id="pfp" src="project-maxa2/images/676-6764065_default-profile-picture-transparent-hd-png-download.png">
             <p><a href="project-maxa2/profile.html">Profile</a></p><br>
             <p><a href="project-maxa2/makePost.html">Create Post</a></p><br>
@@ -28,10 +32,10 @@
 
     <article class="entry">
         <div>
-            <?php
-                include "project-maxa2/pageData.php";
+            
+                
 
-                echo '<p><a href="viewPost.html" class="post">TEST BLOG POST</a>   </p>
+                <p><a href="viewPost.html" class="post">TEST BLOG POST</a>   </p>
                  <p class="user"><a href="#">'.$username. '</a> <time datetime="2023-02-20 9:26"> on Feb 20 at 9:26 am</time></p>
                  <p class="preview">SAMPLE BLOG POST PREVIEW</p> <br><br><br>
                  <figure>
@@ -39,10 +43,8 @@
                     <figcaption>SAMPLE IMAGE</figcaption>
                 </figure> 
                 </div>
-                '; 
+                
 
-        
-        ?>
         
     </article>
 
