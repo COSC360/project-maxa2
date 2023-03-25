@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html class="center">
-    <head lang="en">
+    <head lang="en"> 
     <meta charset="utf-8">
-    <link rel = "stylesheet" href = "project-maxa2/CSS/reset.css">
-    <link rel = "stylesheet" href="project-maxa2/CSS/homePageStyle.css">
+    <link rel = "stylesheet" href = "CSS/reset.css">
+    <link rel = "stylesheet" href="CSS/homePageStyle.css">
         <title>CRUELTY SQUAD FANPAGE</title>
     </head>
 
@@ -11,9 +11,9 @@
         
         <div class="top">
             <h1>WELCOME TO CRUELTY SQUAD</h1> 
-            <p><a href="project-maxa2/login.php" id="login">LOGIN</a> </p><br><br>
+            <p><a href="login.php" id="login">LOGIN</a> </p><br><br>
 
-            <p><a href="project-maxa2/register.php" id="register">REGISTER</a></p>
+            <p><a href="register.php" id="register">REGISTER</a></p>
         </div>
 
     <article id="sidebar">
@@ -32,10 +32,10 @@
                 }
             
             ?>
-            <img id="pfp" src="project-maxa2/images/676-6764065_default-profile-picture-transparent-hd-png-download.png">
-            <p><a href="project-maxa2/profile.html">Profile</a></p><br>
-            <p><a href="project-maxa2/makePost.html">Create Post</a></p><br>
-            <p><a href="project-maxa2/inbox.html">Messages</a></p><br>
+            <img id="pfp" src="images/676-6764065_default-profile-picture-transparent-hd-png-download.png">
+            <p><a href="profile.html">Profile</a></p><br>
+            <p><a href="makePost.html">Create Post</a></p><br>
+            <p><a href="inbox.html">Messages</a></p><br>
             <p><a href="logout.php">Log out</a></p>
 
     </article>
@@ -49,7 +49,7 @@
                  <p class="user"><a href="#">'.$username. '</a> <time datetime="2023-02-20 9:26"> on Feb 20 at 9:26 am</time></p>
                  <p class="preview">SAMPLE BLOG POST PREVIEW</p> <br><br><br>
                  <figure>
-                    <img class="imgPrev" src="project-maxa2/images/20210305221416_1.jpg" alt="gameplay screenshot">
+                    <img class="imgPrev" src="images/20210305221416_1.jpg" alt="gameplay screenshot">
                     <figcaption>SAMPLE IMAGE</figcaption>
                 </figure> 
                 </div>

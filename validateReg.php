@@ -1,11 +1,20 @@
 <?php
 
-    $connString = "mysql:host=localhost;dbname=mysql";
-    $user = "root";
-    
 
-    $pdo = new PDO($connString, $user);
+
+    try{
+    $connString = "mysql:host=localhost;dbname=db_10504520";
+    $user = "10504520";
+    $pass="10504520";
+
+
+    $pdo = new PDO($connString, $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);;
+    }catch(Exception $e){
+        echo $e;
+    }
+        
+
 
     $email = $_POST['email'];
     $username = $_POST['user'];
@@ -18,24 +27,24 @@
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
-        if($stmt->rowCount()>0){
+        // if($stmt->rowCount()>0){
 
-            echo "Fail";
+        //     echo "Fail";
             
-        }else{
+        // }else{
                 
-    
-            $sql = "INSERT INTO `users`(`Username`, `Password`, `Email`) VALUES (?,?,?)";
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(1, $username, PDO::PARAM_STR);
-            $stmt->bindParam(2, $password, PDO::PARAM_STR);
-            $stmt->bindParam(3, $email, PDO::PARAM_STR);
-    
-    
-            $stmt->execute();
-            header("Location: homepage.php");
-            exit();
-        }
+
+            // $sql = "INSERT INTO `Users`(`Username`, `Password`, `Email`) VALUES (?,?,?)";
+            // $stmt = $pdo->prepare($sql);
+            // $stmt->bindParam(1, $username, PDO::PARAM_STR);
+            // $stmt->bindParam(2, $password, PDO::PARAM_STR);
+            // $stmt->bindParam(3, $email, PDO::PARAM_STR);
+
+
+            // $stmt->execute();
+            // header("Location: homepage.php");
+            
+    //     }
 
 
     $pdo = null;
