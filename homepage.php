@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel = "stylesheet" href = "CSS/reset.css">
     <link rel = "stylesheet" href="CSS/homePageStyle.css">
+    <script> function noLog(){alert('No user detected, log in please');}</script>
         <title>CRUELTY SQUAD FANPAGE</title>
     </head>
 
@@ -31,9 +32,23 @@
                    echo "<p>" . $_SESSION["username"]. "</p>";
                 }
             
+
             ?>
             <img id="pfp" src="images/676-6764065_default-profile-picture-transparent-hd-png-download.png">
-            <p><a href="profile.html">Profile</a></p><br>
+            <?php
+                session_start();
+                if(empty($_SESSION["username"])){
+                    session_destroy();
+                }
+
+                if(session_status() == 1){
+                    echo "<p><a href='#' onclick='noLog();'> Profile</a></p><br>";
+
+                }else if (session_status()==2){
+                   echo "<p><a href='profile.php'>Profile</a></p><br>";
+                }
+                ?>
+            
             <p><a href="makePost.html">Create Post</a></p><br>
             <p><a href="inbox.html">Messages</a></p><br>
             <p><a href="logout.php">Log out</a></p>
