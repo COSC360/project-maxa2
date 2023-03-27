@@ -22,13 +22,15 @@
             <p><a href="#">Log out</a></p>
     </article>
 
-    <form class="submit">
+    <form method="post" action="createPost.php" class="submit">
         <div>
                 <h2>SUBMIT</h2><br>
-                <textarea rows="5" cols="80" name="postText" class="required"></textarea>    <br>      
+                <input type="text" name="postName" placeholder="NAME YOUR CREATION" class="required" size = "80"><br>
+                <textarea rows="5" cols="80" name="postText"></textarea><br>      
                 <h2>IMAGE</h2><br>
-                <input type = "file" id="myFile" name="filename"><br>
+                <input type = "file" id="myFile" name="fileName"><br>
                 <input type = "submit" value = "SUBMIT">
+                <p><button formaction="homePage.php">COWARDICE</button></p>
         </div>
     </form>
     </body>

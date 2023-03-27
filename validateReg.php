@@ -5,7 +5,7 @@
     
 
     $pdo = new PDO($connString, $user);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);;
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $email = $_POST['email'];
     $username = $_POST['user'];
