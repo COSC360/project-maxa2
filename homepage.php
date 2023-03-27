@@ -40,13 +40,44 @@
 
     </article>
 
+    <?php 
+
+        $connString = "mysql:host=localhost;dbname=mysql";
+        $user = "root";
+
+        session_start();
+        $username = $_SESSION['username'];
+
+        $pdo = new PDO($connString, $user);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql = "SELECT * FROM `Posts`;"
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+    
+
+
+         while($row = $result->fetch_assoc()) {
+           echo "<p><a href='viewPost.html' class='post'>" $row['Title'] "</a></p>
+            <p class='user'><a href='#'>'.$username. '</a></p>
+            <p class='preview'>"$row['Body']"</p> <br><br><br>
+            " if($row['Image']){
+            "<figure>
+               <img class='imgPrev' src="$row['Image']">
+               <figcaption>SAMPLE IMAGE</figcaption>
+           </figure>"
+            }
+           "</div>";
+         }
+     
+    ?>
     <article class="entry">
         <div>
             
                 
 
                 <p><a href="viewPost.html" class="post">TEST BLOG POST</a>   </p>
-                 <p class="user"><a href="#">'.$username. '</a> <time datetime="2023-02-20 9:26"> on Feb 20 at 9:26 am</time></p>
+                 <p class="user"><a href="#">'.$username. '</a></p>
                  <p class="preview">SAMPLE BLOG POST PREVIEW</p> <br><br><br>
                  <figure>
                     <img class="imgPrev" src="project-maxa2/images/20210305221416_1.jpg" alt="gameplay screenshot">
