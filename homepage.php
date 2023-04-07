@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html class="center">
-    <head lang="en">
+    <head lang="en"> 
     <meta charset="utf-8">
-    <link rel = "stylesheet" href = "project-maxa2/CSS/reset.css">
-    <link rel = "stylesheet" href="project-maxa2/CSS/homePageStyle.css">
+    <link rel = "stylesheet" href = "CSS/reset.css">
+    <link rel = "stylesheet" href="CSS/homePageStyle.css">
+    <script> function noLog(){alert('No user detected, log in please');}</script>
+    <script> function loggedIn(){alert('Already logged in, please log out.');}</script>
         <title>CRUELTY SQUAD FANPAGE</title>
     </head>
 
@@ -11,9 +13,21 @@
         
         <div class="top">
             <h1>WELCOME TO CRUELTY SQUAD</h1> 
-            <p><a href="project-maxa2/login.php" id="login">LOGIN</a> </p><br><br>
+            <?php 
+                session_start();
 
-            <p><a href="project-maxa2/register.php" id="register">REGISTER</a></p>
+                if(empty($_SESSION["username"])){
+                    session_destroy();
+                }
+
+                if(session_status()==1){
+                    echo "<p><a href = 'login.php' id='login'>LOGIN</a></p><br><br>";
+                }else if(session_status() == 2){
+                    echo "<p><a href = '#' onclick='loggedIn()' id='login'>LOGIN</a></p><br><br>";
+                }
+                ?>
+
+            <p><a href="register.php" id="register">REGISTER</a></p>
         </div>
 
     <article id="sidebar">
@@ -31,48 +45,85 @@
                    echo "<p>" . $_SESSION["username"]. "</p>";
                 }
             
+
             ?>
-            <img id="pfp" src="project-maxa2/images/676-6764065_default-profile-picture-transparent-hd-png-download.png">
-            <p><a href="project-maxa2/profile.html">Profile</a></p><br>
-            <p><a href="project-maxa2/makePost.html">Create Post</a></p><br>
-            <p><a href="project-maxa2/inbox.html">Messages</a></p><br>
-            <p><a href="logout.php">Log out</a></p>
+            <img id="pfp" src="images/676-6764065_default-profile-picture-transparent-hd-png-download.png">
+            <?php
+                session_start();
+                if(empty($_SESSION["username"])){
+                    session_destroy();
+                }
 
-    </article>
+                if(session_status() == 1){
+                    echo "<p><a href='#' onclick='noLog();'> Profile</a></p><br>";
 
-    <article class="entry">
-        <div>
+                }else if (session_status()==2){
+                   echo "<p><a href='profile.php'>Profile</a></p><br>";
+                }
+                ?>
             
-                
+            <?php
+                session_start();
+                if(empty($_SESSION["username"])){
+                    session_destroy();
+                }
 
-                <p><a href="viewPost.html" class="post">TEST BLOG POST</a>   </p>
-                 <p class="user"><a href="#">'.$username. '</a> <time datetime="2023-02-20 9:26"> on Feb 20 at 9:26 am</time></p>
-                 <p class="preview">SAMPLE BLOG POST PREVIEW</p> <br><br><br>
-                 <figure>
-                    <img class="imgPrev" src="project-maxa2/images/20210305221416_1.jpg" alt="gameplay screenshot">
-                    <figcaption>SAMPLE IMAGE</figcaption>
-                </figure> 
-                </div>
-                
+                if(session_status() == 1){
+                    echo "<p><a href='#' onclick='noLog();'> Create Post</a></p><br>";
 
+                }else if (session_status()==2){
+                   echo "<p><a href='makePost.html'>Create Post</a></p><br>";
+                }
+            ?>
+            <p><a href="inbox.html">Messages</a></p><br>
+            <p><a href="logout.php">Log out</a></p><br>
+            <?php
+                session_start();
+                $admin = $_SESSION["admin"];
+
+                if($admin == 1){
+                    echo "<p><a href ='admin.php'>Admin tools</a></p>";
+                }
+            ?> 
+
+    </article>
+
+    
+    <?php 
+
+        $connString = "mysql:host=localhost;dbname=db_10504520";
+        $user = "10504520";
+        $pass="10504520";
+
+        session_start();
+        $username = $_SESSION['username'];
+
+        $pdo = new PDO($connString, $user, $pass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql = "SELECT * FROM `Posts`;";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $count = 0;
+        $array = array();
+        $array = $row['id'];
         
-    </article>
+                
+         while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-    <article class="entry">
-        <div>   
-            <p><a href="#" class="post">TEST POST 2</a></p>
-            <p class="user"><a href="#">coolgamer32</a><time datetime="2023-02-11 13:20"> on Feb 11 at 1:20 pm</time></p> 
-            <p class="preview">ANOTHER SAMPLE POST PREVIEW</p>
-        </div>
-    </article>
+            echo "<article class='entry'>
+            <p><a href='viewPost.php?id=".$count."' class='post'>" .$row['Title']. "</a></p>
+            <p class='user'><a href='#'>".$row['Username']. "</a></p>
+             <p class='preview'>".$row['Body']. "</p> <br><br><br>" ;
+             
+             echo "<p></p>";
 
-    <article class="entry">
-        <div>   
-            <p><a href="#" class="post">TEST POST 3</a></p>
-            <p class="user"><a href="#">awesomedude51</a><time datetime="2023-01-12 13:20"> on Jan 12 at 1:20 pm</time></p> 
-            <p class="preview">ANOTHER SAMPLE POST PREVIEW</p>
-        </div>
-    </article>
+           echo "</div> </article>";
+           $count +=1 ;
+         }
+     
+    ?>
+                
 
 
         
