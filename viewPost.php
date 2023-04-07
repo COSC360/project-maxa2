@@ -35,8 +35,6 @@
             $stmt->execute();
             $postData = $stmt->fetch();
 
-            $data = base64_encode($postData['Image']);
-            $src = 'data:image/jpeg;base64, ' . $data;
 
 
             echo "<article class='entry'>
@@ -45,7 +43,7 @@
                         <p class = 'user'>".$postData['Username']."</p>
                         <p class='postText'>".$postData['Body']."</p>
                         <figure>
-                    <img class='image' src='".$src."' alt=''>
+                    <img src='data:image/jpg; base64, ".base64_encode($postData['Image'])."' class='image' alt=''>
                     <figcaption></figcaption>
                     </figure>  
                             <div class = 'ratings'>
