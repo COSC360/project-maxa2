@@ -105,8 +105,7 @@
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $count = 0;
-        $array = array();
-        $array = $row['id'];
+        $admin = $_SESSION["admin"];
         
                 
          while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -114,7 +113,10 @@
             echo "<article class='entry'>
             <p><a href='viewPost.php?id=".$count."' class='post'>" .$row['Title']. "</a></p>
             <p class='user'><a href='#'>".$row['Username']. "</a></p>
-             <p class='preview'>".$row['Body']. "</p> <br><br><br>" ;
+            <p class='preview'>".$row['Body']. "</p> <br><br><br>" ;
+            if($admin == 1){
+                echo "<p class ='user'>Post id: " .$count;
+            }
              
              echo "<p></p>";
 

@@ -16,6 +16,13 @@
                 </p>
                 <button id = "b" type = "submit" name = "ban">Ban</button>
         </form>
+        <form method="post" action="delete.php" class="entry">
+                <legend>Delete a post by id</legend>
+                <p> <label>Id</label>
+                    <input class = "required" type="text" name="id">
+                </p>
+                <button id = "b" type = "submit" name = "id">Delete</button>
+        </form>
 
 
 
